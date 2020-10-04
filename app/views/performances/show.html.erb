@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>P year:</strong>
+  <%= @performance.p_year %>
+</p>
+
+<p>
+  <strong>P month:</strong>
+  <%= @performance.p_month %>
+</p>
+
+<p>
+  <strong>P day:</strong>
+  <%= @performance.p_day %>
+</p>
+
+<p>
+  <strong>P money:</strong>
+  <%= @performance.p_money %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @performance.content_id %>
+</p>
+
+<p>
+  <strong>P comment:</strong>
+  <%= @performance.p_comment %>
+</p>
+
+<%= link_to 'Edit', edit_performance_path(@performance) %> |
+<%= link_to 'Back', performances_path %>

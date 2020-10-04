@@ -1,0 +1,42 @@
+<%= form_with(model: budget, local: true) do |form| %>
+  <% if budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
+
+      <ul>
+      <% budget.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :b_year %>
+    <%= form.number_field :b_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :b_month %>
+    <%= form.number_field :b_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content_id %>
+    <%= form.collection_select :content_id, @content, :id, :name, { prompt: "選択してください" } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :b_money %>
+    <%= form.number_field :b_money %>
+  </div>
+
+  <div class="field">
+    <%= form.label :b_comment %>
+    <%= form.text_field :b_comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

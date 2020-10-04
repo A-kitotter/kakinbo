@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  p_year: 1
+  p_month: 1
+  p_day: 1
+  p_money: 1
+  content_id: 1
+  p_comment: MyString
+
+two:
+  p_year: 1
+  p_month: 1
+  p_day: 1
+  p_money: 1
+  content_id: 1
+  p_comment: MyString

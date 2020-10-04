@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  b_year: 1
+  b_month: 1
+  b_money: 1
+  content_id: 1
+  b_comment: MyString
+
+two:
+  b_year: 1
+  b_month: 1
+  b_money: 1
+  content_id: 1
+  b_comment: MyString
