@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :content_id %>
-    <%= form.collection_select :content_id, @content, :id, :name, { prompt: "選択してください" } %>
+    <%= form.collection_select :content_id, Content.all, :id, :name %>
   </div>
 
   <div class="field">

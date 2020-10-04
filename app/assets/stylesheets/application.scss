@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     width: 90%;
+     font-family: 'M PLUS 1p', sans-serif;
+ }
+ .date {
+    width: 150px;
+}
+ .money {
+     width: 80px;
+     text-align: right;
+ }
+ .content {
+     width: 200px;
+     text-align: center;
+ }
+ .comment {
+     width: 300px;
+     text-align: left;
+}
+ table{
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  table th,table td{
+    padding: auto 10px;
+    text-align: center;
+  }
+  
+  table tr:nth-child(odd){
+    background-color: rgb(247, 247, 247);
+  }
+
+  table th{
+    background-color: rgb(65, 73, 102);
+    color: rgb(247, 247, 247);
+    text-align: center;
+  }
+
+  .graph_contain {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+  }

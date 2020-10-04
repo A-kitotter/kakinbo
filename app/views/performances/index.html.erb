@@ -8,26 +8,22 @@
       <th>year/month/day</th>
       <th>money</th>
       <th>Content</th>
-      <th>comment</th>
-      <th colspan="3"></th>
+      <th class="comment">comment</th>
+      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @performances.each do |performance| %>
       <tr>
-        <td><%= performance.p_year %>/<%= performance.p_month %>/<%= performance.p_day %></td>
-        <td><%= performance.p_money %></td>
-        <td><%= performance.content.name %></td>
-        <td><%= performance.p_comment %></td>
-        <td><%= link_to 'Show', performance %></td>
-        <td><%= link_to 'Edit', edit_performance_path(performance) %></td>
+        <td class="date"><%= performance.p_year %>/<%= performance.p_month %>/<%= performance.p_day %></td>
+        <td class="money">￥<%= performance.p_money.to_s(:delimited) %></td>
+        <td class="content"><%= performance.content.name %></td>
+        <td class="comment"><%= performance.p_comment %></td>
         <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Performance', new_performance_path %>
+

@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= form.label :b_year %>
-    <%= form.number_field :b_year, :value => @d.year %>
+    <%= form.number_field :b_year, :value => @year %>
   </div>
 
   <div class="field">
     <%= form.label :b_month %>
-    <%= form.number_field :b_month, :value => @d.month %>
+    <%= form.number_field :b_month, :value => @month %>
   </div>
 
   <div class="field">
     <%= form.label :content_id %>
-    <%= form.collection_select :content_id, @content, :id, :name, { prompt: "選択してください" } %>
+    <%= form.collection_select :content_id, @content, :id, :name %>
   </div>
 
   <div class="field">

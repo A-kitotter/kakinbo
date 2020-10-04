@@ -1,25 +1,25 @@
+<div class="graph_contain">
+  <div class="graph_b"><%= column_chart @data, thousands: ",", width: "600px", height: "300px", stacked: true %></div>
+</div>
 
-<h1>Budgets</h1>
-<h2>今月の予算　<%= @this_month_budgets =%>円</h2>
+<h2>今月の予算　￥<%= @this_month_budgets.to_s(:delimited) =%></h2>
 <table>
   <thead>
     <tr>
       <th>year/month</th>
       <th>money</th>
       <th>content</th>
-      <th>comment</th>
-      <th colspan="3"></th>
+      <th class="comment">comment</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @budgets.each do |budget| %>
       <tr>
-        <td><%= budget.b_year %>/<%= budget.b_month %></td>
-        <td><%= budget.b_money %></td>
-        <td><%= budget.content.name %></td>
-        <td><%= budget.b_comment %></td>
-        <td><%= link_to 'Show', budget %></td>
-        <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
+        <td class="date"><%= budget.b_year %>/<%= budget.b_month %></td>
+        <td class="money">￥<%= budget.b_money.to_s(:delimited) %></td>
+        <td class="content"><%= budget.content.name %></td>
+        <td class="comment"><%= budget.b_comment %></td>
         <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,27 +28,24 @@
 <br>
 <%= link_to 'New Budget', new_budget_path %>
 
-<h1>Performances</h1>
-<h2>今月の課金額　<%= @this_month_performances =%>円</h2>
+<h2>今月の課金額　￥<%= @this_month_performances.to_s(:delimited) =%></h2>
 <table>
   <thead>
     <tr>
       <th>year/month/day</th>
       <th>money</th>
       <th>Content</th>
-      <th>comment</th>
-      <th colspan="3"></th>
+      <th class="comment">comment</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @performances.each do |performance| %>
       <tr>
-        <td><%= performance.p_year %>/<%= performance.p_month %>/<%= performance.p_day %></td>
-        <td><%= performance.p_money %></td>
-        <td><%= performance.content.name %></td>
-        <td><%= performance.p_comment %></td>
-        <td><%= link_to 'Show', performance %></td>
-        <td><%= link_to 'Edit', edit_performance_path(performance) %></td>
+        <td class="date"><%= performance.p_year %>/<%= performance.p_month %>/<%= performance.p_day %></td>
+        <td class="money">￥<%= performance.p_money.to_s(:delimited) %></td>
+        <td class="content"><%= performance.content.name %></td>
+        <td class="comment"><%= performance.p_comment %></td>
         <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
