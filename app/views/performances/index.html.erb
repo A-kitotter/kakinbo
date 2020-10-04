@@ -18,7 +18,7 @@
       <tr>
         <td><%= performance.p_year %>/<%= performance.p_month %>/<%= performance.p_day %></td>
         <td><%= performance.p_money %></td>
-        <td><%= performance.content_id %></td>
+        <td><%= performance.content.name %></td>
         <td><%= performance.p_comment %></td>
         <td><%= link_to 'Show', performance %></td>
         <td><%= link_to 'Edit', edit_performance_path(performance) %></td>

@@ -19,7 +19,7 @@
       <tr>
         <td><%= budget.b_year %>/<%= budget.b_month %></td>
         <td><%= budget.b_money %></td>
-        <td><%= budget.content_id %></td>
+        <td><%= budget.content.name %></td>
         <td><%= budget.b_comment %></td>
         <td><%= link_to 'Show', budget %></td>
         <td><%= link_to 'Edit', edit_budget_path(budget) %></td>

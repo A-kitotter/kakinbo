@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= form.label :p_year %>
-    <%= form.number_field :p_year %>
+    <%= form.number_field :p_year, :value => @d.year %>
   </div>
 
   <div class="field">
     <%= form.label :p_month %>
-    <%= form.number_field :p_month %>
+    <%= form.number_field :p_month, :value => @d.month %>
   </div>
 
   <div class="field">
     <%= form.label :p_day %>
-    <%= form.number_field :p_day %>
+    <%= form.number_field :p_day, :value => @d.day %>
   </div>
 
   <div class="field">

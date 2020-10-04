@@ -4,6 +4,7 @@ class BudgetsController < ApplicationController
   # GET /budgets
   # GET /budgets.json
   def index
+    @content = Content.all
     @budgets = Budget.all
   end
 
@@ -15,18 +16,17 @@ class BudgetsController < ApplicationController
   # GET /budgets/new
   def new
     @content = Content.all
+    @d = Date.today
     @budget = Budget.new
   end
 
   # GET /budgets/1/edit
   def edit
-    @content = Content.all
   end
 
   # POST /budgets
   # POST /budgets.json
   def create
-    @content = Content.all
     @budget = Budget.new(budget_params)
 
     respond_to do |format|
@@ -42,8 +42,7 @@ class BudgetsController < ApplicationController
 
   # PATCH/PUT /budgets/1
   # PATCH/PUT /budgets/1.json
-  def update
-    @content = Content.all
+  def updated
     respond_to do |format|
       if @budget.update(budget_params)
         format.html { redirect_to @budget, notice: 'Budget was successfully updated.' }

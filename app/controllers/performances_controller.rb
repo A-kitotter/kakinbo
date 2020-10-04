@@ -4,6 +4,7 @@ class PerformancesController < ApplicationController
   # GET /performances
   # GET /performances.json
   def index
+    @content = Content.all
     @performances = Performance.all
   end
 
@@ -15,18 +16,17 @@ class PerformancesController < ApplicationController
   # GET /performances/new
   def new
     @content = Content.all
+    @d = Date.today
     @performance = Performance.new
   end
 
   # GET /performances/1/edit
   def edit
-    @content = Content.all
   end
 
   # POST /performances
   # POST /performances.json
   def create
-    @content = Content.all
     @performance = Performance.new(performance_params)
 
     respond_to do |format|
@@ -43,7 +43,6 @@ class PerformancesController < ApplicationController
   # PATCH/PUT /performances/1
   # PATCH/PUT /performances/1.json
   def update
-    @content = Content.all
     respond_to do |format|
       if @performance.update(performance_params)
         format.html { redirect_to @performance, notice: 'Performance was successfully updated.' }
