@@ -12,8 +12,8 @@ class IndexPageController < ApplicationController
 
     #postgreでエラーが出るので、groupの部分を書き換える
     #一度content_idで集計して、eachループでコンテンツ名に差し替える方式
-    @content_b = @budgets.group(:content_id).sum(:b_money).sort_by { |_, v| -v }.to_h
-    @content_p = @performances.group(:content_id).sum(:p_money).sort_by { |_, v| -v }.to_h
+    @content_b = @budgets.eager_load(:content).group(:'contents.name').order(nil).sum(:b_money).sort_by { |_, v| -v }.to_h
+    @content_p = @performances.eager_load(:content).group(:'contents.name').order(nil).sum(:p_money).sort_by { |_, v| -v }.to_h
   
     all_contents = (@content_b.keys + @content_p.keys).uniq
     content_max = all_contents.max
