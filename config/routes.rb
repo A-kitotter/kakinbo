@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'index_pages#show'
+  root 'index_page#index'
   resources :performances
   resources :budgets
   resources :contents

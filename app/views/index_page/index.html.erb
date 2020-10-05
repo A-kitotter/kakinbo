@@ -1,0 +1,56 @@
+<div class="graph_contain">
+  <div class="graph_b"><%= column_chart @data, thousands: ",", width: "600px", height: "300px", stacked: true %></div>
+</div>
+
+<h2>今月の予算　￥<%= @this_month_budgets.to_s(:delimited) =%></h2>
+<table>
+  <thead>
+    <tr>
+      <th>year/month</th>
+      <th>money</th>
+      <th>content</th>
+      <th class="comment">comment</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @budgets.each do |budget| %>
+      <tr>
+        <td class="date"><%= budget.b_year %>/<%= budget.b_month %></td>
+        <td class="money">￥<%= budget.b_money.to_s(:delimited) %></td>
+        <td class="content"><%= budget.content.name %></td>
+        <td class="comment"><%= budget.b_comment %></td>
+        <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Budget', new_budget_path %>
+
+<h2>今月の課金額　￥<%= @this_month_performances.to_s(:delimited) =%></h2>
+<table>
+  <thead>
+    <tr>
+      <th>year/month/day</th>
+      <th>money</th>
+      <th>Content</th>
+      <th class="comment">comment</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @performances.each do |performance| %>
+      <tr>
+        <td class="date"><%= performance.p_year %>/<%= performance.p_month %>/<%= performance.p_day %></td>
+        <td class="money">￥<%= performance.p_money.to_s(:delimited) %></td>
+        <td class="content"><%= performance.content.name %></td>
+        <td class="comment"><%= performance.p_comment %></td>
+        <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Performance', new_performance_path %>
+

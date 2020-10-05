@@ -1,5 +1,5 @@
 class IndexPageController < ApplicationController
-  def show
+  def index
     @d = Date.today
     @month = @d.month
 
