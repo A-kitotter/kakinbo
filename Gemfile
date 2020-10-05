@@ -28,6 +28,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'gon', '~> 6.2.0'
+gem 'rails_12factor', group: :production
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
