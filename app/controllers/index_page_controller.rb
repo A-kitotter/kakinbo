@@ -10,10 +10,11 @@ class IndexPageController < ApplicationController
     @this_month_budgets = @budgets.sum(:b_money)
     @this_month_performances = @performances.sum(:p_money)
 
-    @content_b = @budgets.eager_load(:content).group(:'contents.name').sum(:b_money).sort_by { |_, v| -v }.to_h
-    @content_p = @performances.eager_load(:content).group(:'contents.name').sum(:p_money).sort_by { |_, v| -v }.to_h
-    
-
+    #postgreでエラーが出るので、groupの部分を書き換える
+    #一度content_idで集計して、eachループでコンテンツ名に差し替える方式
+    @content_b = @budgets.group(:content_id).sum(:b_money).sort_by { |_, v| -v }.to_h
+    @content_p = @performances.group(:content_id).sum(:p_money).sort_by { |_, v| -v }.to_h
+  
     all_contents = (@content_b.keys + @content_p.keys).uniq
     content_max = all_contents.max
     @data = []
@@ -22,7 +23,7 @@ class IndexPageController < ApplicationController
     all_contents.each do |content|
       @data << {
         name: content, 
-        data: [["予算", @content_b[content]], ["課金", @content_p[content]]]
+        data: [["予算", @content_b[content]], ["課金額", @content_p[content]]]
       }
     end
   end

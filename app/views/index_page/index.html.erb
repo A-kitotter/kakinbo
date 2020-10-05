@@ -1,5 +1,7 @@
+<h2><%= @d.year %>年<%= @month %>月の課金状況</h2>
+
 <div class="graph_contain">
-  <div class="graph_b"><%= column_chart @data, thousands: ",", width: "600px", height: "300px", stacked: true %></div>
+  <div class="graph_b"><%= column_chart @data, thousands: ",", width: "600px", height: "250px", stacked: true %></div>
 </div>
 
 <h2>今月の予算　￥<%= @this_month_budgets.to_s(:delimited) =%></h2>
@@ -26,7 +28,7 @@
   </tbody>
 </table>
 <br>
-<%= link_to 'New Budget', new_budget_path %>
+<%= link_to '予算を追加する', new_budget_path, class: 'btn btn-default' %>
 
 <h2>今月の課金額　￥<%= @this_month_performances.to_s(:delimited) =%></h2>
 <table>
@@ -52,5 +54,5 @@
   </tbody>
 </table>
 <br>
-<%= link_to 'New Performance', new_performance_path %>
+<%= link_to '課金額を追加する', new_performance_path, class: 'btn btn-default' %>
 

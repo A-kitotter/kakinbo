@@ -13,11 +13,45 @@
  *= require_tree .
  *= require_self
  */
-
+ * {
+  box-sizing: border-box;
+}
  body {
-     width: 90%;
-     font-family: 'M PLUS 1p', sans-serif;
+  margin: 0;
+  padding: 80px 0 30px;
+  font-family: 'M PLUS 1p', sans-serif;
+  background-color: #f1f1f1;
  }
+ main {
+   width: 90%;
+   margin: 0 auto;
+ }
+ header {
+  width: 100%;
+  padding: 10px 4% 10px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+a {	
+  text-decoration: none;
+  color: #4b4b4b;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+li {
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+nav {
+  margin: 0 0 0 auto;
+}
+
  .date {
     width: 150px;
 }

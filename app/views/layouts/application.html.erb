@@ -11,12 +11,19 @@
   </head>
 
   <body>
-    <div class="header">
+    <header>
     <a href="/"><H1>Kakinbo</H1></a>
-    <a href="/budgets">予算</a>
-    <a href="/performances">実績</a>
-    <a href="/contents">コンテンツ</a>
-    </div>
+      <nav class="pc-nav">
+        <ul>
+          <li><a href="/budgets">予算</a></li>
+          <li><a href="/performances">実績</a></li>
+          <li><a href="/contents">コンテンツ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
     <%= yield %>
+    </main>
   </body>
 </html>
