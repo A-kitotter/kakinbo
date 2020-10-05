@@ -20,7 +20,7 @@
         <td class="money">￥<%= budget.b_money.to_s(:delimited) %></td>
         <td class="content"><%= budget.content.name %></td>
         <td class="comment"><%= budget.b_comment %></td>
-        <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,7 +46,7 @@
         <td class="money">￥<%= performance.p_money.to_s(:delimited) %></td>
         <td class="content"><%= performance.content.name %></td>
         <td class="comment"><%= performance.p_comment %></td>
-        <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>

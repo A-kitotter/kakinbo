@@ -10,24 +10,20 @@ class IndexPageController < ApplicationController
     @this_month_budgets = @budgets.sum(:b_money)
     @this_month_performances = @performances.sum(:p_money)
 
-    @content_b = @budgets.eager_load(:content).group(:'contents.name').sum(:b_money)
-    @content_p = @performances.eager_load(:content).group(:'contents.name').sum(:p_money)
+    @content_b = @budgets.eager_load(:content).group(:'contents.name').sum(:b_money).sort_by { |_, v| -v }.to_h
+    @content_p = @performances.eager_load(:content).group(:'contents.name').sum(:p_money).sort_by { |_, v| -v }.to_h
+    
 
-    #@dataをループ処理で作成する
+    all_contents = (@content_b.keys + @content_p.keys).uniq
+    content_max = all_contents.max
+    @data = []
+    num = 0
 
-    @data = [
-      {
-        name: @content[0].name, 
-        data: [["予算", @content_b[@content[0].name]], ["課金", @content_p[@content[0].name]]]
-      },
-      {
-        name: @content[1].name, 
-        data: [["予算", @content_b[@content[1].name]], ["課金", @content_p[@content[1].name]]]
-      },
-      {
-        name: @content[2].name, 
-        data: [["予算", @content_b[@content[2].name]], ["課金", @content_p[@content[2].name]]]
+    all_contents.each do |content|
+      @data << {
+        name: content, 
+        data: [["予算", @content_b[content]], ["課金", @content_p[content]]]
       }
-    ]
+    end
   end
 end
