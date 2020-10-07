@@ -15,9 +15,16 @@
     <a href="/"><H1>Kakinbo</H1></a>
       <nav class="pc-nav">
         <ul>
-          <li><a href="/budgets">予算</a></li>
-          <li><a href="/performances">実績</a></li>
-          <li><a href="/contents">コンテンツ</a></li>
+          <% if logged_in? %>
+            <li><a href="/budgets">予算</a></li>
+            <li><a href="/performances">実績</a></li>
+            <li><a href="/contents">コンテンツ</a></li>
+            <li>/</li>
+            <li><%= link_to "Users", '#' %></li>
+            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Log in", login_path %></li>
+          <% end %>
         </ul>
       </nav>
     </header>
