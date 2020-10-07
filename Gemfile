@@ -29,6 +29,9 @@ gem 'groupdate'
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'gon', '~> 6.2.0'
 gem 'rails_12factor', group: :production
+gem 'dotenv-rails'
+gem 'omniauth-twitter'
+gem 'bcrypt', '~> 3.1.11'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

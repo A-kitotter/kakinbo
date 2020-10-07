@@ -22,7 +22,7 @@ class IndexPageController < ApplicationController
 
     all_contents.each do |content|
       @data << {
-        name: content, 
+        name: Content.find(content).name, 
         data: [["予算", @content_b[content]], ["課金額", @content_p[content]]]
       }
     end
