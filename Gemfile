@@ -32,7 +32,8 @@ gem 'rails_12factor', group: :production
 gem 'dotenv-rails'
 gem 'omniauth-twitter'
 gem 'bcrypt', '~> 3.1.11'
-
+gem 'will_paginate',           '3.1.7'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

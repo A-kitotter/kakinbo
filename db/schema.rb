@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_011215) do
+ActiveRecord::Schema.define(version: 2020_10_08_140852) do
 
   create_table "budgets", force: :cascade do |t|
     t.integer "b_year"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_011215) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
