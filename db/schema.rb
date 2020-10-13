@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_145034) do
+ActiveRecord::Schema.define(version: 2020_10_12_153109) do
 
   create_table "budgets", force: :cascade do |t|
     t.integer "b_year"
@@ -20,12 +20,16 @@ ActiveRecord::Schema.define(version: 2020_10_12_145034) do
     t.string "b_comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_budgets_on_user_id"
   end
 
   create_table "contents", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_contents_on_user_id"
   end
 
   create_table "performances", force: :cascade do |t|
@@ -37,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_10_12_145034) do
     t.string "p_comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_performances_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

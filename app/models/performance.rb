@@ -1,5 +1,6 @@
 class Performance < ApplicationRecord
     belongs_to :content
+    belongs_to :user
     validates :p_year, presence: true, :numericality => { :greater_than_or_equal_to => 0 } 
     validates :p_month, presence: true, :numericality => { :greater_than_or_equal_to => 0 } 
     validates :p_day, presence: true, :numericality => { :greater_than_or_equal_to => 0 } 
